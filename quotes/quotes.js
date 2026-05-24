@@ -8,7 +8,7 @@
 
 const quotes = [
   {
-    text: "To solve a problem that now seems so real to you, all that you do is remove your attention from it. In spite of its seeming reality, turn from it in consciousness, becoming different, and begin to feel yourself to be that which would be the solution of the problem.",
+    text: "To solve a problem that now seems so real to you, all that you do is remove your attention from it. In spite of its seeming reality, turn from it in consciousness, becoming completely indifferent to its existence, and begin to feel yourself to be that which would be the solution of the problem.",
     source: "Neville Goddard, At Your Command",
     note: "",
     date: "2026-05-24",
