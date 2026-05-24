@@ -7,5 +7,10 @@
 // Newest first.
 
 const quotes = [
-  // Dictate a quote and it gets added right here.
+  {
+    text: "Your attention is as the sap of life that keeps alive and sustains the things of your world.",
+    source: "Neville Goddard, At Your Command",
+    note: "",
+    date: "2026-05-24",
+  },
 ];
