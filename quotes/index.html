@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotes to Remember</title>
+  <style>
+    :root {
+      --ink: #2b2b2b;
+      --muted: #8a8278;
+      --accent: #b07d48;
+      --card: #fffdf8;
+      --line: #e7e0d3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f7f4ed;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      padding: 3rem 1.25rem 5rem;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 3rem; }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.4rem;
+    }
+    .sub { color: var(--muted); font-style: italic; font-size: 1rem; }
+    .count { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.6rem; }
+    .quote {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .quote .text {
+      font-size: 1.25rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .quote .text::before { content: "\201C"; color: var(--accent); margin-right: 0.1em; }
+    .quote .text::after  { content: "\201D"; color: var(--accent); margin-left: 0.05em; }
+    .meta { margin-top: 1rem; font-size: 0.9rem; }
+    .source { color: var(--accent); font-style: italic; }
+    .note {
+      color: var(--muted);
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--line);
+    }
+    .date { color: var(--muted); font-size: 0.78rem; float: right; }
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+      padding: 3rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Quotes to Remember</h1>
+      <div class="sub">words worth keeping</div>
+      <div class="count" id="count"></div>
+    </header>
+    <main id="list"></main>
+  </div>
+
+  <script src="quotes.js"></script>
+  <script>
+    const list = document.getElementById("list");
+    const count = document.getElementById("count");
+    const esc = (s) => String(s).replace(/[&<>"]/g, c => (
+      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]
+    ));
+
+    if (!Array.isArray(quotes) || quotes.length === 0) {
+      list.innerHTML = '<div class="empty">No quotes yet — dictate one and it\'ll appear here.</div>';
+    } else {
+      count.textContent = quotes.length + (quotes.length === 1 ? " quote" : " quotes");
+      list.innerHTML = quotes.map(q => {
+        const meta = [];
+        if (q.date)   meta.push('<span class="date">' + esc(q.date) + "</span>");
+        if (q.source) meta.push('<span class="source">— ' + esc(q.source) + "</span>");
+        const note = q.note ? '<div class="note">' + esc(q.note) + "</div>" : "";
+        return (
+          '<article class="quote">' +
+            '<p class="text">' + esc(q.text) + "</p>" +
+            (meta.length ? '<div class="meta">' + meta.join("") + "</div>" : "") +
+            note +
+          "</article>"
+        );
+      }).join("");
+    }
+  </script>
+</body>
+</html>
