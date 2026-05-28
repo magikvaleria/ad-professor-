@@ -24,3 +24,5 @@ My note: I'm thinking the consciousness of being is the same thing as consciousn
 > If you are dissatisfied with your present expression of life, then you must be born again. Rebirth is the dropping of that level with which you are dissatisfied, and rising to that level of consciousness which you desire to express.
 
 > But every level of consciousness expresses itself automatically.
+
+> In order to rise to the level you are not now expressing, you must completely drop the consciousness with which you are now identified. Until your present consciousness drops, you will not be able to rise to another level.
