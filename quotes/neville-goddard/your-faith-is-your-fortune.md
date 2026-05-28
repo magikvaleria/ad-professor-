@@ -42,3 +42,7 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 > A true meditation requires getting into the floating state — a state that completely denies the physical. It is pure relaxation, no reaction to sensory impressions, and in it you become very receptive.
 
 > Once you are there, experiencing the expansion of consciousness — the formless deep of yourself — then you begin to give form to your conception by claiming and feeling yourself to be that which you desire to be. And when you are in that formless deep of yourself, all things appear to be divinely possible.
+
+## On self-valuation — giants and grasshoppers
+
+> We can be to others only that which we are to ourselves. Therefore, if we value ourselves and begin to feel ourselves to be the giant, a center of power, we automatically change our relationship to the giants — reducing these former monsters to their true place, making them appear to be the helpless grasshoppers.
