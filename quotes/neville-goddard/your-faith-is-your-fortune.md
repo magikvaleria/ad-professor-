@@ -18,3 +18,7 @@ Quotes I want to remember, with notes.
 > The consciousness of being is not dependent upon being anything.
 
 My note: I'm thinking the consciousness of being is the same thing as consciousness itself — which is God.
+
+## On rebirth
+
+> If you are dissatisfied with your present expression of life, then you must be born again. Rebirth is the dropping of that level with which you are dissatisfied, and rising to that level of consciousness which you desire to express.
