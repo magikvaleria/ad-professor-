@@ -40,3 +40,5 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 ## On the floating state
 
 > A true meditation requires getting into the floating state — a state that completely denies the physical. It is pure relaxation, no reaction to sensory impressions, and in it you become very receptive.
+
+> Once you are there, experiencing the expansion of consciousness — the formless deep of yourself — then you begin to give form to your conception by claiming and feeling yourself to be that which you desire to be. And when you are in that formless deep of yourself, all things appear to be divinely possible.
