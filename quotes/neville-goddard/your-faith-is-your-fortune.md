@@ -50,3 +50,7 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 ## On consciousness as the only savior
 
 > Consciousness is the one and only savior. The knowledge that I am is God compels man to let all others go, for he finds it impossible to serve two gods. Man cannot accept his awareness, or feeling of being, as God and at the same time believe in another deity.
+
+## On the vine and the branches
+
+> "I am the vine, and ye are the branches." Consciousness is the vine, and that which you are conscious of being is as the branches that you feed and keep alive. Just as a branch has no life except it be rooted in the vine, so likewise things have no life except you be conscious of them. Just as a branch withers and dies if the sap of the vine ceases to flow toward it, so do things pass away if you take your attention from them — because your attention is the sap of life that sustains the expression of your life.
