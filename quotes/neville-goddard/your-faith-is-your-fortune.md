@@ -46,3 +46,7 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 ## On self-valuation — giants and grasshoppers
 
 > We can be to others only that which we are to ourselves. Therefore, if we value ourselves and begin to feel ourselves to be the giant, a center of power, we automatically change our relationship to the giants — reducing these former monsters to their true place, making them appear to be the helpless grasshoppers.
+
+## On consciousness as the only savior
+
+> Consciousness is the one and only savior. The knowledge that I am is God compels man to let all others go, for he finds it impossible to serve two gods. Man cannot accept his awareness, or feeling of being, as God and at the same time believe in another deity.
