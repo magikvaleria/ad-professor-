@@ -34,3 +34,5 @@ My note: I'm thinking the consciousness of being is the same thing as consciousn
 ## On the practice — feeling "I am"
 
 > Take your attention away from your problem and place it upon just being. Say silently but feelingly, "I am." Do not condition this awareness, but continue declaring quietly, "I am. I am." Simply feel that you are faceless and formless, and continue doing so until you feel yourself floating.
+
+My note: This is very similar to Joe Dispenza's work — detaching from the body first, becoming no one, nowhere, no thing, no body. Same idea of dropping form and identity before you can become something new.
