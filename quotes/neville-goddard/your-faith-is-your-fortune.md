@@ -7,12 +7,6 @@ Quotes I want to remember, with notes.
 
 ---
 
-<!--
-Add quotes below. Suggested format:
+## On rising in consciousness
 
-## Chapter / page
-
-> The quote goes here, exactly as written.
-
-A note to myself about why it stuck.
--->
+> To rise in consciousness to the level of the thing desired, and to remain there until such a level becomes your nature, is the way of all seeming miracles.
