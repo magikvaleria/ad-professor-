@@ -93,6 +93,8 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 
 > Expressions follow the impressions; they do not precede them. Proof that you are will follow the claim that you are — it will not precede it.
 
+> Before anything appears, God — I AM — feels himself to be the thing desired, and then the thing felt appears. It is resurrected, lifted out of nothingness.
+
 ## Scriptures to meditate on
 
 > I rejoice not in the sacrifices of men.
