@@ -31,6 +31,10 @@ My note: This is exactly how it felt with the mentorship — like I was asleep, 
 
 > You are constantly drawing to yourself that which you are conscious of being. Change your conception of yourself from that of the slave to that of Christ. Do not be embarrassed to make this claim — only as you claim "I am Christ" will you do the works of Christ.
 
+> Your true self is not interested in man's opinion. All its interest lies in your conviction of yourself. What do you say of the I AM within you? Can you answer and say, "I am Christ"? Your answer — your degree of understanding — will determine the place you will occupy in life.
+
+> Do you believe yourself to be a man of a certain family, race, nation? If you honestly believe this of yourself, then life — your true self — will cause these conceptions to appear in your world, and you will live with them as though they were real.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
