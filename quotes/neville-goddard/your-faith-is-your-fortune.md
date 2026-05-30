@@ -25,6 +25,8 @@ My note: I used to believe in masters — but no one else lifts you up; the only
 
 > Your belief in masters is a confession of your slavery. Only slaves have masters. Change your conception of yourself, and you will, without the aid of masters or anyone else, automatically transform your world to conform to your changed conception of yourself.
 
+My note: This is exactly how it felt with the mentorship — like I was asleep, depending on it for me to do well. But no — everything I need is within me.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
