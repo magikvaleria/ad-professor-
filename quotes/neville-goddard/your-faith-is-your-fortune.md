@@ -13,6 +13,8 @@ Quotes I want to remember, with notes.
 
 > The rising from one level of consciousness to another is the only ascension you will ever experience. No man can lead you to the level you desire. The power to ascend is within yourself — it is your consciousness.
 
+> You appropriate the consciousness of the level you desire to express by claiming that you are now expressing such a level. That is the ascension.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
