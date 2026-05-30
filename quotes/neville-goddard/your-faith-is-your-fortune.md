@@ -11,6 +11,8 @@ Quotes I want to remember, with notes.
 
 > To rise in consciousness to the level of the thing desired, and to remain there until such a level becomes your nature, is the way of all seeming miracles.
 
+> The rising from one level of consciousness to another is the only ascension you will ever experience. No man can lead you to the level you desire. The power to ascend is within yourself — it is your consciousness.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
