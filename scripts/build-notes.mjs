@@ -150,112 +150,191 @@ const page = `<!doctype html>
     <meta name="description" content="Quotes and reflections from my reading, as flippable cards by topic." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" />
     <style>
       :root {
-        --paper: #f4f1ea;
-        --card: #fffdf8;
-        --card-back: #2c2722;
-        --ink: #23201b;
-        --soft: #6b655c;
-        --accent: #6a5b3e;
-        --rule: #e2ddd1;
+        --night: #1a1230;
+        --night-2: #0f0a20;
+        --parchment: #f3e9d2;
+        --parchment-2: #e8d9b5;
+        --card-back: #241a3c;
+        --ink: #2a2118;
+        --soft: #b9a98c;
+        --gold: #c9a24b;
+        --gold-bright: #e7c66a;
+        --rule: rgba(201, 162, 75, 0.35);
       }
       * { box-sizing: border-box; }
-      html { background: var(--paper); }
+      html { background: var(--night-2); }
       body {
         margin: 0;
-        color: var(--ink);
-        font-family: "EB Garamond", Georgia, serif;
+        color: var(--parchment);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.05rem;
         line-height: 1.6;
+        position: relative;
+        background:
+          radial-gradient(1200px 700px at 50% -10%, #2c1f4d 0%, rgba(44,31,77,0) 60%),
+          radial-gradient(900px 600px at 85% 20%, #3a2553 0%, rgba(58,37,83,0) 55%),
+          linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+        background-attachment: fixed;
       }
-      .wrap { max-width: 64rem; margin: 0 auto; padding: 4.5rem 1.25rem 7rem; }
+      /* Starfield: two layered sprinklings of stars + a slow shimmer. */
+      body::before, body::after {
+        content: "";
+        position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      }
+      body::before {
+        background-image:
+          radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.9), transparent),
+          radial-gradient(1.5px 1.5px at 70% 65%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.8), transparent),
+          radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1.5px 1.5px at 55% 45%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1px 1px at 90% 85%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1.5px 1.5px at 33% 12%, rgba(255,255,255,0.8), transparent);
+        animation: twinkle 6s ease-in-out infinite alternate;
+      }
+      body::after {
+        background-image:
+          radial-gradient(1px 1px at 15% 85%, rgba(231,198,106,0.8), transparent),
+          radial-gradient(1px 1px at 65% 25%, rgba(231,198,106,0.6), transparent),
+          radial-gradient(1px 1px at 80% 55%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 45% 70%, rgba(231,198,106,0.5), transparent);
+        animation: twinkle 9s ease-in-out infinite alternate-reverse;
+      }
+      @keyframes twinkle { from { opacity: 0.5; } to { opacity: 1; } }
 
-      header.masthead { text-align: center; margin-bottom: 2.5rem; }
+      .wrap { position: relative; z-index: 1; max-width: 64rem; margin: 0 auto; padding: 5rem 1.25rem 7rem; }
+
+      header.masthead { text-align: center; margin-bottom: 3rem; }
       .kicker {
-        font-family: "Inter", sans-serif;
-        font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
-        color: var(--accent); margin: 0 0 0.6rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase;
+        color: var(--gold); margin: 0 0 1rem;
       }
-      h1.site { font-size: 2.7rem; font-weight: 500; margin: 0; line-height: 1.1; }
-      .tagline { color: var(--soft); font-style: italic; margin: 0.6rem 0 0; }
+      .ornament { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.5em; margin-bottom: 0.6rem; opacity: 0.85; }
+      h1.site {
+        font-family: "Cinzel", serif;
+        font-size: 2.7rem; font-weight: 600; margin: 0; line-height: 1.15;
+        color: #f7eecf;
+        text-shadow: 0 0 18px rgba(201,162,75,0.45), 0 2px 2px rgba(0,0,0,0.4);
+      }
+      .tagline { color: var(--soft); font-style: italic; margin: 0.8rem 0 0; font-size: 1.05rem; }
 
       .filters {
         display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
-        margin: 0 auto 3rem; max-width: 52rem;
+        margin: 0 auto 3.5rem; max-width: 54rem;
       }
       .chip {
-        font-family: "Inter", sans-serif; font-size: 0.78rem;
-        padding: 0.4rem 0.85rem; border-radius: 999px; cursor: pointer;
-        border: 1px solid var(--rule); background: transparent; color: var(--soft);
-        transition: all 0.18s ease;
+        font-family: "Cinzel", serif; font-size: 0.68rem; letter-spacing: 0.08em;
+        padding: 0.45rem 0.95rem; border-radius: 999px; cursor: pointer;
+        border: 1px solid var(--rule); background: rgba(255,255,255,0.02); color: var(--soft);
+        transition: all 0.2s ease;
       }
-      .chip:hover { border-color: var(--accent); color: var(--accent); }
-      .chip.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .chip:hover { border-color: var(--gold); color: var(--gold-bright); box-shadow: 0 0 12px rgba(201,162,75,0.25); }
+      .chip.is-active {
+        background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+        border-color: var(--gold-bright); color: #2a1d05; font-weight: 500;
+        box-shadow: 0 0 16px rgba(231,198,106,0.4);
+      }
 
-      .book { margin-bottom: 3.5rem; }
+      .book { margin-bottom: 4rem; }
       .book-title {
-        font-size: 1.05rem; font-weight: 500; text-align: center; color: var(--soft);
-        font-style: italic; margin: 0 0 1.75rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem; font-weight: 400; letter-spacing: 0.12em; text-align: center;
+        color: var(--gold); margin: 0 0 2rem; text-transform: uppercase;
       }
-      .book-author { display: block; font-size: 0.85rem; font-style: normal; }
+      .book-author { display: block; font-family: "Cormorant Garamond", serif; font-size: 0.95rem; font-style: italic; letter-spacing: 0; text-transform: none; color: var(--soft); margin-top: 0.3rem; }
 
       .grid {
-        display: grid; gap: 1.1rem;
-        grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+        display: grid; gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
       }
 
       .card {
         font: inherit; text-align: left; border: none; background: none; padding: 0;
-        cursor: pointer; perspective: 1200px; min-height: 13rem;
+        cursor: pointer; perspective: 1400px; min-height: 15rem;
       }
       .card.is-hidden { display: none; }
       .card-inner {
         display: grid; height: 100%;
-        transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+        transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
         transform-style: preserve-3d;
       }
+      .card:hover .card-inner { transform: translateY(-4px); }
       .card.is-flipped .card-inner { transform: rotateY(180deg); }
+      .card.is-flipped:hover .card-inner { transform: rotateY(180deg) translateY(-4px); }
       .face {
-        grid-area: 1 / 1; height: 100%;
+        grid-area: 1 / 1; height: 100%; position: relative;
         -webkit-backface-visibility: hidden; backface-visibility: hidden;
-        border-radius: 14px; padding: 1.35rem 1.4rem;
+        border-radius: 12px; padding: 1.5rem 1.5rem 1.4rem;
         display: flex; flex-direction: column;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(40,32,20,0.07);
+        box-shadow:
+          0 2px 4px rgba(0,0,0,0.3),
+          0 14px 40px rgba(0,0,0,0.45),
+          0 0 0 1px rgba(201,162,75,0.25),
+          inset 0 0 0 1px rgba(201,162,75,0.4),
+          inset 0 0 22px rgba(201,162,75,0.08);
       }
-      .front { background: var(--card); border: 1px solid var(--rule); }
-      .back { background: var(--card-back); color: #f4f1ea; transform: rotateY(180deg); }
+      /* Gilt inner border frame on both faces. */
+      .face::before {
+        content: "";
+        position: absolute; inset: 8px;
+        border: 1px solid rgba(201,162,75,0.45);
+        border-radius: 7px; pointer-events: none;
+      }
+      .front {
+        background:
+          radial-gradient(120% 80% at 50% 0%, #fbf3dd 0%, var(--parchment) 55%, var(--parchment-2) 100%);
+        color: var(--ink);
+      }
+      .back {
+        background:
+          radial-gradient(130% 90% at 50% 0%, #34265a 0%, var(--card-back) 60%, #1b1330 100%);
+        color: var(--parchment);
+        transform: rotateY(180deg);
+      }
 
       .tag {
-        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.12em;
-        text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
+        font-family: "Cinzel", serif; font-size: 0.6rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: #9c7b2e; margin-bottom: 0.85rem;
+        position: relative; z-index: 1;
       }
-      .back .tag { color: #c9b890; }
-      .quote { font-size: 1.12rem; font-style: italic; line-height: 1.5; }
+      .back .tag { color: var(--gold-bright); }
+      .quote { font-size: 1.2rem; font-style: italic; line-height: 1.5; position: relative; z-index: 1; }
+      .front .quote::first-letter { font-size: 1.05em; }
       .hint {
-        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.1em;
-        text-transform: uppercase; color: var(--soft); margin-top: auto; padding-top: 0.9rem;
+        font-family: "Cinzel", serif; font-size: 0.56rem; letter-spacing: 0.2em;
+        text-transform: uppercase; color: #b08f3e; margin-top: auto; padding-top: 1rem;
+        position: relative; z-index: 1; opacity: 0.8;
       }
+      .hint::before { content: "✦ "; }
       .back-label {
-        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.12em;
-        text-transform: uppercase; color: #c9b890; margin-bottom: 0.4rem;
+        font-family: "Cinzel", serif; font-size: 0.58rem; letter-spacing: 0.16em;
+        text-transform: uppercase; color: var(--gold-bright); margin-bottom: 0.45rem;
+        position: relative; z-index: 1;
       }
-      .note { margin: 0; font-style: italic; font-size: 1.02rem; }
-      .attribution { margin: auto 0 0; font-style: italic; font-size: 1.05rem; }
-      .byline { display: block; font-size: 0.85rem; color: #c9b890; font-style: normal; margin-top: 0.2rem; }
+      .note { margin: 0; font-style: italic; font-size: 1.05rem; position: relative; z-index: 1; }
+      .attribution { margin: auto 0 0; font-style: italic; font-size: 1.1rem; position: relative; z-index: 1; }
+      .byline { display: block; font-size: 0.9rem; color: var(--gold-bright); font-style: normal; margin-top: 0.25rem; }
 
       footer {
-        margin-top: 4rem; text-align: center;
+        margin-top: 4.5rem; text-align: center;
         color: var(--soft); font-size: 0.85rem; font-style: italic;
+        position: relative; z-index: 1;
       }
+      footer::before { content: "✦ ✦ ✦"; display: block; color: var(--gold); letter-spacing: 0.5em; margin-bottom: 1rem; opacity: 0.7; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header class="masthead">
+        <div class="ornament">✦ ☾ ✦</div>
         <p class="kicker">Reading Notes</p>
         <h1 class="site">Quotes &amp; Reflections</h1>
-        <p class="tagline">Tap a card to flip it. Filter by topic above.</p>
+        <p class="tagline">Draw a card. Tap to turn it. Filter the deck by topic.</p>
       </header>
 
       ${filterBar}
