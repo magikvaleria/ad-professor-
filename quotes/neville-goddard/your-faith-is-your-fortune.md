@@ -51,6 +51,8 @@ My note: I'm thinking the consciousness of being is the same thing as consciousn
 
 > You rise to a higher level of consciousness by taking your attention away from your present limitations and placing it upon that which you desire to be.
 
+> Caveat: Do not attempt this through daydreaming or wishful thinking, but in a positive manner. Claim yourself to be the thing desired — "I am that." No sacrifice, no diet, no human tricks. All that is asked of you is to accept your desire.
+
 ## On escaping your present conception of yourself
 
 > You are invited to escape from your present conception of yourself, with all its limitations, and the Lord with whom you are to be present is your awareness of being.
