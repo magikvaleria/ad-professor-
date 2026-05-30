@@ -23,6 +23,8 @@ My note: I used to believe in masters — but no one else lifts you up; the only
 
 > You claim yourself to be that which you want to be, and that you shall be — not because of any master who gave it unto you, but because you have recognized me, your own self, to be that. I will give it unto you, for I am all things to all.
 
+> Your belief in masters is a confession of your slavery. Only slaves have masters. Change your conception of yourself, and you will, without the aid of masters or anyone else, automatically transform your world to conform to your changed conception of yourself.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
