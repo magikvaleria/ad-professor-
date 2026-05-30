@@ -15,6 +15,12 @@ Quotes I want to remember, with notes.
 
 > You appropriate the consciousness of the level you desire to express by claiming that you are now expressing such a level. That is the ascension.
 
+## On masters — the master is within
+
+> Turn from the human superstition of ascension, with its belief in masters who will lift you to the goal. The only everlasting master is within yourself — your own consciousness, your source.
+
+My note: I used to believe in masters — but no one else lifts you up; the only everlasting master is within. And it never exhausts our capacity to ascend, which is why the mentor relationship is never-ending: we're always evolving, evolving, evolving, ascending to new layers.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
