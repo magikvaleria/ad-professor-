@@ -117,3 +117,11 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 > Do not be Lot's wife, who looks back and becomes salt, preserved in the past. Be Lot, who does not look back but keeps his vision fixed upon the promised land — the thing desired.
 
 > Do this, and you will know that you have found the master — the master magician, making the unseen seen through the claim: "I am that."
+
+## On faith — believing is seeing
+
+> The I AM — your consciousness — is the only door through which anything can pass into your world. Stop looking for signs. Signs follow; they do not precede.
+
+> Reverse the statement: not "seeing is believing," but "believing is seeing." Begin now to believe — not with the wavering confidence based on deceptive external evidence, but with the undaunted confidence based on immutable law — that you can be that which you desire to be.
+
+> You will find that you are not a victim of fate, but a victim of faith — your own faith.
