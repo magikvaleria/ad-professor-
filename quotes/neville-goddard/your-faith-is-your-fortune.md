@@ -80,3 +80,36 @@ My note: This is very similar to Joe Dispenza's work — detaching from the body
 ## On the vine and the branches
 
 > "I am the vine, and ye are the branches." Consciousness is the vine, and that which you are conscious of being is as the branches that you feed and keep alive. Just as a branch has no life except it be rooted in the vine, so likewise things have no life except you be conscious of them. Just as a branch withers and dies if the sap of the vine ceases to flow toward it, so do things pass away if you take your attention from them — because your attention is the sap of life that sustains the expression of your life.
+
+## On the claim — "I am that"
+
+> If you dare claim it, you will express it.
+
+> The works are finished. All that is required of you to let these qualities into expression is the claim: "I am that." Claim yourself to be that which you desire to be, and that you shall be.
+
+> Expressions follow the impressions; they do not precede them. Proof that you are will follow the claim that you are — it will not precede it.
+
+## Scriptures to meditate on
+
+> I rejoice not in the sacrifices of men.
+— Malachi 1:10
+
+> Not by might, nor by power, but by my spirit.
+— Zechariah 4:6
+
+> Ask, and you shall receive.
+— Matthew 7:7 · Matthew 21:22 · Mark 11:24 · Luke 11:9 · John 15:7 · John 16:24
+
+> Come, eat and drink without price.
+— Isaiah 55:1
+
+## On leaving all and following
+
+> Leave all and follow me.
+— Matthew 8:22 · Matthew 9:9 · Luke 5:27
+
+> "Leave all and follow me" is a double invitation. First, it invites you to turn completely away from all your problems; then it calls upon you to continue walking in the claim that you are that which you desire to be.
+
+> Do not be Lot's wife, who looks back and becomes salt, preserved in the past. Be Lot, who does not look back but keeps his vision fixed upon the promised land — the thing desired.
+
+> Do this, and you will know that you have found the master — the master magician, making the unseen seen through the claim: "I am that."

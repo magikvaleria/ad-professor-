@@ -39,7 +39,7 @@ function parseBook(md) {
 
   const flushQuote = () => {
     if (quoteBuf.length) {
-      book.cards.push({ category, quote: quoteBuf.join(' '), note: '' });
+      book.cards.push({ category, quote: quoteBuf.join(' '), note: '', source: '' });
       quoteBuf = [];
     }
   };
@@ -70,6 +70,10 @@ function parseBook(md) {
       flushQuote();
       const last = book.cards[book.cards.length - 1];
       if (last) last.note = line.replace(/^My note:\s*/i, '').trim();
+    } else if (/^(—|Source:)/i.test(line)) {
+      flushQuote();
+      const last = book.cards[book.cards.length - 1];
+      if (last) last.source = line.replace(/^(—\s*|Source:\s*)/i, '').trim();
     } else if (line === '') {
       flushQuote();
     }
@@ -89,6 +93,8 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)
 function cardHtml(card, book) {
   const back = card.note
     ? `<span class="back-label">My note</span><p class="note">${inline(card.note)}</p>`
+    : card.source
+    ? `<span class="back-label">Reference</span><p class="note">${inline(card.source)}</p>`
     : `<p class="attribution">${inline(book.title)}<span class="byline">${inline(book.author)}</span></p>`;
   return `<button class="card" data-topic="${slug(card.category)}" aria-label="Flip card">
         <span class="card-inner">
