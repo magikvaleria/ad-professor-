@@ -27,6 +27,10 @@ My note: I used to believe in masters — but no one else lifts you up; the only
 
 My note: This is exactly how it felt with the mentorship — like I was asleep, depending on it for me to do well. But no — everything I need is within me.
 
+## On claiming "I am Christ"
+
+> You are constantly drawing to yourself that which you are conscious of being. Change your conception of yourself from that of the slave to that of Christ. Do not be embarrassed to make this claim — only as you claim "I am Christ" will you do the works of Christ.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
