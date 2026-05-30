@@ -4,16 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Reading Notes</title>
-    <meta name="description" content="Quotes and reflections from my reading." />
+    <meta name="description" content="Quotes and reflections from my reading, as flippable cards by topic." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" />
     <style>
       :root {
-        --paper: #f7f5ef;
+        --paper: #f4f1ea;
+        --card: #fffdf8;
+        --card-back: #2c2722;
         --ink: #23201b;
         --soft: #6b655c;
         --accent: #6a5b3e;
@@ -25,57 +24,86 @@
         margin: 0;
         color: var(--ink);
         font-family: "EB Garamond", Georgia, serif;
-        font-size: 1.15rem;
-        line-height: 1.65;
+        line-height: 1.6;
       }
-      .wrap { max-width: 40rem; margin: 0 auto; padding: 5rem 1.5rem 7rem; }
-      header.masthead { margin-bottom: 4rem; }
-      header.masthead .kicker {
-        font-size: 0.78rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin: 0 0 0.6rem;
+      .wrap { max-width: 64rem; margin: 0 auto; padding: 4.5rem 1.25rem 7rem; }
+
+      header.masthead { text-align: center; margin-bottom: 2.5rem; }
+      .kicker {
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+        color: var(--accent); margin: 0 0 0.6rem;
       }
-      header.masthead h1.site {
-        font-size: 2.6rem;
-        font-weight: 500;
-        margin: 0;
-        line-height: 1.1;
+      h1.site { font-size: 2.7rem; font-weight: 500; margin: 0; line-height: 1.1; }
+      .tagline { color: var(--soft); font-style: italic; margin: 0.6rem 0 0; }
+
+      .filters {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
+        margin: 0 auto 3rem; max-width: 52rem;
       }
-      header.masthead p.tagline {
-        color: var(--soft);
-        font-style: italic;
-        margin: 0.6rem 0 0;
+      .chip {
+        font-family: "Inter", sans-serif; font-size: 0.78rem;
+        padding: 0.4rem 0.85rem; border-radius: 999px; cursor: pointer;
+        border: 1px solid var(--rule); background: transparent; color: var(--soft);
+        transition: all 0.18s ease;
       }
-      .book h1 {
-        font-size: 1.9rem;
-        font-weight: 500;
-        margin: 0 0 0.25rem;
+      .chip:hover { border-color: var(--accent); color: var(--accent); }
+      .chip.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+      .book { margin-bottom: 3.5rem; }
+      .book-title {
+        font-size: 1.05rem; font-weight: 500; text-align: center; color: var(--soft);
+        font-style: italic; margin: 0 0 1.75rem;
       }
-      .book h2 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: var(--accent);
-        margin: 3rem 0 1rem;
+      .book-author { display: block; font-size: 0.85rem; font-style: normal; }
+
+      .grid {
+        display: grid; gap: 1.1rem;
+        grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
       }
-      blockquote {
-        margin: 1.1rem 0;
-        padding-left: 1.1rem;
-        border-left: 2px solid var(--accent);
-        font-style: italic;
-        color: #322e27;
+
+      .card {
+        font: inherit; text-align: left; border: none; background: none; padding: 0;
+        cursor: pointer; perspective: 1200px; min-height: 13rem;
       }
-      p { margin: 0.85rem 0; color: #312d26; }
-      .book p strong { font-weight: 600; }
-      hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+      .card.is-hidden { display: none; }
+      .card-inner {
+        display: grid; height: 100%;
+        transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+        transform-style: preserve-3d;
+      }
+      .card.is-flipped .card-inner { transform: rotateY(180deg); }
+      .face {
+        grid-area: 1 / 1; height: 100%;
+        -webkit-backface-visibility: hidden; backface-visibility: hidden;
+        border-radius: 14px; padding: 1.35rem 1.4rem;
+        display: flex; flex-direction: column;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(40,32,20,0.07);
+      }
+      .front { background: var(--card); border: 1px solid var(--rule); }
+      .back { background: var(--card-back); color: #f4f1ea; transform: rotateY(180deg); }
+
+      .tag {
+        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
+      }
+      .back .tag { color: #c9b890; }
+      .quote { font-size: 1.12rem; font-style: italic; line-height: 1.5; }
+      .hint {
+        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.1em;
+        text-transform: uppercase; color: var(--soft); margin-top: auto; padding-top: 0.9rem;
+      }
+      .back-label {
+        font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.12em;
+        text-transform: uppercase; color: #c9b890; margin-bottom: 0.4rem;
+      }
+      .note { margin: 0; font-style: italic; font-size: 1.02rem; }
+      .attribution { margin: auto 0 0; font-style: italic; font-size: 1.05rem; }
+      .byline { display: block; font-size: 0.85rem; color: #c9b890; font-style: normal; margin-top: 0.2rem; }
+
       footer {
-        margin-top: 5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--rule);
-        color: var(--soft);
-        font-size: 0.85rem;
-        font-style: italic;
+        margin-top: 4rem; text-align: center;
+        color: var(--soft); font-size: 0.85rem; font-style: italic;
       }
     </style>
   </head>
@@ -84,41 +112,228 @@
       <header class="masthead">
         <p class="kicker">Reading Notes</p>
         <h1 class="site">Quotes &amp; Reflections</h1>
-        <p class="tagline">Lines worth keeping from what I read, with my own notes.</p>
+        <p class="tagline">Tap a card to flip it. Filter by topic above.</p>
       </header>
 
+      <div class="filters">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="on-rising-in-consciousness">On rising in consciousness</button>
+        <button class="chip" data-filter="on-consciousness-as-god">On consciousness as God</button>
+        <button class="chip" data-filter="on-rebirth">On rebirth</button>
+        <button class="chip" data-filter="on-escaping-your-present-conception-of-yourself">On escaping your present conception of yourself</button>
+        <button class="chip" data-filter="on-the-practice-feeling-i-am">On the practice — feeling &quot;I am&quot;</button>
+        <button class="chip" data-filter="on-the-floating-state">On the floating state</button>
+        <button class="chip" data-filter="on-self-valuation-giants-and-grasshoppers">On self-valuation — giants and grasshoppers</button>
+        <button class="chip" data-filter="on-consciousness-as-the-only-savior">On consciousness as the only savior</button>
+        <button class="chip" data-filter="on-the-vine-and-the-branches">On the vine and the branches</button>
+      </div>
+
     <section class="book">
-      <h1>Your Faith Is Your Fortune</h1>
-      <p><strong>Author:</strong> Neville Goddard <strong>Started reading:</strong> 2026-05-28</p>
-      <p>Quotes I want to remember, with notes.</p>
-      <hr />
-      <h2>On rising in consciousness</h2>
-      <blockquote>To rise in consciousness to the level of the thing desired, and to remain there until such a level becomes your nature, is the way of all seeming miracles.</blockquote>
-      <h2>On consciousness as God</h2>
-      <blockquote>Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.</blockquote>
-      <blockquote>The consciousness of being is not dependent upon being anything.</blockquote>
-      <p>My note: I'm thinking the consciousness of being is the same thing as consciousness itself — which is God.</p>
-      <h2>On rebirth</h2>
-      <blockquote>If you are dissatisfied with your present expression of life, then you must be born again. Rebirth is the dropping of that level with which you are dissatisfied, and rising to that level of consciousness which you desire to express.</blockquote>
-      <blockquote>But every level of consciousness expresses itself automatically.</blockquote>
-      <blockquote>In order to rise to the level you are not now expressing, you must completely drop the consciousness with which you are now identified. Until your present consciousness drops, you will not be able to rise to another level.</blockquote>
-      <h2>On escaping your present conception of yourself</h2>
-      <blockquote>You are invited to escape from your present conception of yourself, with all its limitations, and the Lord with whom you are to be present is your awareness of being.</blockquote>
-      <h2>On the practice — feeling &quot;I am&quot;</h2>
-      <blockquote>Take your attention away from your problem and place it upon just being. Say silently but feelingly, &quot;I am.&quot; Do not condition this awareness, but continue declaring quietly, &quot;I am. I am.&quot; Simply feel that you are faceless and formless, and continue doing so until you feel yourself floating.</blockquote>
-      <p>My note: This is very similar to Joe Dispenza's work — detaching from the body first, becoming no one, nowhere, no thing, no body. Same idea of dropping form and identity before you can become something new.</p>
-      <h2>On the floating state</h2>
-      <blockquote>A true meditation requires getting into the floating state — a state that completely denies the physical. It is pure relaxation, no reaction to sensory impressions, and in it you become very receptive.</blockquote>
-      <blockquote>Once you are there, experiencing the expansion of consciousness — the formless deep of yourself — then you begin to give form to your conception by claiming and feeling yourself to be that which you desire to be. And when you are in that formless deep of yourself, all things appear to be divinely possible.</blockquote>
-      <h2>On self-valuation — giants and grasshoppers</h2>
-      <blockquote>We can be to others only that which we are to ourselves. Therefore, if we value ourselves and begin to feel ourselves to be the giant, a center of power, we automatically change our relationship to the giants — reducing these former monsters to their true place, making them appear to be the helpless grasshoppers.</blockquote>
-      <h2>On consciousness as the only savior</h2>
-      <blockquote>Consciousness is the one and only savior. The knowledge that I am is God compels man to let all others go, for he finds it impossible to serve two gods. Man cannot accept his awareness, or feeling of being, as God and at the same time believe in another deity.</blockquote>
-      <h2>On the vine and the branches</h2>
-      <blockquote>&quot;I am the vine, and ye are the branches.&quot; Consciousness is the vine, and that which you are conscious of being is as the branches that you feed and keep alive. Just as a branch has no life except it be rooted in the vine, so likewise things have no life except you be conscious of them. Just as a branch withers and dies if the sap of the vine ceases to flow toward it, so do things pass away if you take your attention from them — because your attention is the sap of life that sustains the expression of your life.</blockquote>
+      <h2 class="book-title">Your Faith Is Your Fortune<span class="book-author">Neville Goddard</span></h2>
+      <div class="grid">
+        <button class="card" data-topic="on-rising-in-consciousness" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On rising in consciousness</span>
+            <span class="quote">To rise in consciousness to the level of the thing desired, and to remain there until such a level becomes your nature, is the way of all seeming miracles.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On rising in consciousness</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-consciousness-as-god" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On consciousness as God</span>
+            <span class="quote">Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On consciousness as God</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-consciousness-as-god" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On consciousness as God</span>
+            <span class="quote">The consciousness of being is not dependent upon being anything.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On consciousness as God</span>
+            <span class="back-label">My note</span><p class="note">I'm thinking the consciousness of being is the same thing as consciousness itself — which is God.</p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-rebirth" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On rebirth</span>
+            <span class="quote">If you are dissatisfied with your present expression of life, then you must be born again. Rebirth is the dropping of that level with which you are dissatisfied, and rising to that level of consciousness which you desire to express.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On rebirth</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-rebirth" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On rebirth</span>
+            <span class="quote">But every level of consciousness expresses itself automatically.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On rebirth</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-rebirth" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On rebirth</span>
+            <span class="quote">In order to rise to the level you are not now expressing, you must completely drop the consciousness with which you are now identified. Until your present consciousness drops, you will not be able to rise to another level.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On rebirth</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-escaping-your-present-conception-of-yourself" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On escaping your present conception of yourself</span>
+            <span class="quote">You are invited to escape from your present conception of yourself, with all its limitations, and the Lord with whom you are to be present is your awareness of being.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On escaping your present conception of yourself</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-the-practice-feeling-i-am" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On the practice — feeling &quot;I am&quot;</span>
+            <span class="quote">Take your attention away from your problem and place it upon just being. Say silently but feelingly, &quot;I am.&quot; Do not condition this awareness, but continue declaring quietly, &quot;I am. I am.&quot; Simply feel that you are faceless and formless, and continue doing so until you feel yourself floating.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On the practice — feeling &quot;I am&quot;</span>
+            <span class="back-label">My note</span><p class="note">This is very similar to Joe Dispenza's work — detaching from the body first, becoming no one, nowhere, no thing, no body. Same idea of dropping form and identity before you can become something new.</p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-the-floating-state" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On the floating state</span>
+            <span class="quote">A true meditation requires getting into the floating state — a state that completely denies the physical. It is pure relaxation, no reaction to sensory impressions, and in it you become very receptive.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On the floating state</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-the-floating-state" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On the floating state</span>
+            <span class="quote">Once you are there, experiencing the expansion of consciousness — the formless deep of yourself — then you begin to give form to your conception by claiming and feeling yourself to be that which you desire to be. And when you are in that formless deep of yourself, all things appear to be divinely possible.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On the floating state</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-self-valuation-giants-and-grasshoppers" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On self-valuation — giants and grasshoppers</span>
+            <span class="quote">We can be to others only that which we are to ourselves. Therefore, if we value ourselves and begin to feel ourselves to be the giant, a center of power, we automatically change our relationship to the giants — reducing these former monsters to their true place, making them appear to be the helpless grasshoppers.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On self-valuation — giants and grasshoppers</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-consciousness-as-the-only-savior" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On consciousness as the only savior</span>
+            <span class="quote">Consciousness is the one and only savior. The knowledge that I am is God compels man to let all others go, for he finds it impossible to serve two gods. Man cannot accept his awareness, or feeling of being, as God and at the same time believe in another deity.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On consciousness as the only savior</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+        <button class="card" data-topic="on-the-vine-and-the-branches" aria-label="Flip card">
+        <span class="card-inner">
+          <span class="face front">
+            <span class="tag">On the vine and the branches</span>
+            <span class="quote">&quot;I am the vine, and ye are the branches.&quot; Consciousness is the vine, and that which you are conscious of being is as the branches that you feed and keep alive. Just as a branch has no life except it be rooted in the vine, so likewise things have no life except you be conscious of them. Just as a branch withers and dies if the sap of the vine ceases to flow toward it, so do things pass away if you take your attention from them — because your attention is the sap of life that sustains the expression of your life.</span>
+            <span class="hint">tap to flip</span>
+          </span>
+          <span class="face back">
+            <span class="tag">On the vine and the branches</span>
+            <p class="attribution">Your Faith Is Your Fortune<span class="byline">Neville Goddard</span></p>
+          </span>
+        </span>
+      </button>
+      </div>
     </section>
 
       <footer>A private reading journal.</footer>
     </div>
+
+    <script>
+      // Flip a card on click.
+      document.querySelectorAll('.card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          card.classList.toggle('is-flipped');
+        });
+      });
+
+      // Filter cards by topic.
+      var chips = document.querySelectorAll('.chip');
+      var cards = document.querySelectorAll('.card');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('is-active'); });
+          chip.classList.add('is-active');
+          var filter = chip.getAttribute('data-filter');
+          cards.forEach(function (card) {
+            var show = filter === 'all' || card.getAttribute('data-topic') === filter;
+            card.classList.toggle('is-hidden', !show);
+            card.classList.remove('is-flipped');
+          });
+          // Hide a book section if it has no visible cards.
+          document.querySelectorAll('.book').forEach(function (book) {
+            var any = book.querySelectorAll('.card:not(.is-hidden)').length > 0;
+            book.style.display = any ? '' : 'none';
+          });
+        });
+      });
+    </script>
   </body>
 </html>
