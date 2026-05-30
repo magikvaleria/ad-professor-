@@ -39,7 +39,7 @@ function parseBook(md) {
 
   const flushQuote = () => {
     if (quoteBuf.length) {
-      book.cards.push({ category, quote: quoteBuf.join(' '), note: '', source: '' });
+      book.cards.push({ category, quote: quoteBuf.join(' '), note: '', source: '', apply: '', when: '' });
       quoteBuf = [];
     }
   };
@@ -74,6 +74,14 @@ function parseBook(md) {
       flushQuote();
       const last = book.cards[book.cards.length - 1];
       if (last) last.source = line.replace(/^(—\s*|Source:\s*)/i, '').trim();
+    } else if (/^Apply:/i.test(line)) {
+      flushQuote();
+      const last = book.cards[book.cards.length - 1];
+      if (last) last.apply = line.replace(/^Apply:\s*/i, '').trim();
+    } else if (/^When:/i.test(line)) {
+      flushQuote();
+      const last = book.cards[book.cards.length - 1];
+      if (last) last.when = line.replace(/^When:\s*/i, '').trim();
     } else if (line === '') {
       flushQuote();
     }
@@ -91,11 +99,17 @@ const topics = [...new Set(books.flatMap((b) => b.cards.map((c) => c.category)))
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 function cardHtml(card, book) {
-  const back = card.note
-    ? `<span class="back-label">My note</span><p class="note">${inline(card.note)}</p>`
-    : card.source
-    ? `<span class="back-label">Reference</span><p class="note">${inline(card.source)}</p>`
-    : `<p class="attribution">${inline(book.title)}<span class="byline">${inline(book.author)}</span></p>`;
+  const back =
+    card.apply || card.when
+      ? `<span class="back-label">Apply it</span><p class="note">${inline(card.apply)}</p>` +
+        (card.when
+          ? `<span class="back-label" style="margin-top:0.9rem">Reach for it when</span><p class="note">${inline(card.when)}</p>`
+          : '')
+      : card.note
+      ? `<span class="back-label">My note</span><p class="note">${inline(card.note)}</p>`
+      : card.source
+      ? `<span class="back-label">Reference</span><p class="note">${inline(card.source)}</p>`
+      : `<p class="attribution">${inline(book.title)}<span class="byline">${inline(book.author)}</span></p>`;
   return `<button class="card" data-topic="${slug(card.category)}" aria-label="Flip card">
         <span class="card-inner">
           <span class="face front">
