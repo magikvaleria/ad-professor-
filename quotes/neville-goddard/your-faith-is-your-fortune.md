@@ -21,6 +21,8 @@ Quotes I want to remember, with notes.
 
 My note: I used to believe in masters — but no one else lifts you up; the only everlasting master is within. And it never exhausts our capacity to ascend, which is why the mentor relationship is never-ending: we're always evolving, evolving, evolving, ascending to new layers.
 
+> You claim yourself to be that which you want to be, and that you shall be — not because of any master who gave it unto you, but because you have recognized me, your own self, to be that. I will give it unto you, for I am all things to all.
+
 ## On consciousness as God
 
 > Consciousness is God, and that which is conscious of being is the son bearing witness of God, the Father. The conceiver and the conception are one, but the conceiver is greater than his conception.
