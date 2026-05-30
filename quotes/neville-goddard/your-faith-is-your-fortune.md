@@ -47,6 +47,8 @@ My note: I'm thinking the consciousness of being is the same thing as consciousn
 
 > In order to rise to the level you are not now expressing, you must completely drop the consciousness with which you are now identified. Until your present consciousness drops, you will not be able to rise to another level.
 
+> You will never transcend your present accomplishments through sacrifice and struggle. Your present level of consciousness will only be transcended as you drop the present state and rise to a higher level.
+
 ## On escaping your present conception of yourself
 
 > You are invited to escape from your present conception of yourself, with all its limitations, and the Lord with whom you are to be present is your awareness of being.
