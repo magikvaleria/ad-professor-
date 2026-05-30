@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Pull in every quote file under /quotes (excluding the README).
+// New books and new quotes show up automatically on the next build.
+const modules = import.meta.glob('../../quotes/**/*.md', { eager: true });
+
+const books = Object.entries(modules)
+  .filter(([path]) => !path.toLowerCase().endsWith('readme.md'))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, mod]) => {
+    const m = mod as { Content: any };
+    return { path, Content: m.Content };
+  });
+---
+<BaseLayout title="Reading Notes · Quotes" description="Quotes I'm collecting as I read.">
+  <article class="max-w-prose mx-auto px-6 pt-16 pb-24">
+    <h1 class="font-serif text-4xl text-ink mb-2">Reading Notes</h1>
+    <p class="font-sans text-sm text-ink/60 mb-14">
+      Quotes I'm collecting as I read, with my own notes.
+    </p>
+
+    {books.length === 0 ? (
+      <p class="font-serif text-lg text-ink/60 italic">No quotes yet.</p>
+    ) : (
+      books.map(({ Content }) => (
+        <section class="prose-notes mb-20">
+          <Content />
+        </section>
+      ))
+    )}
+  </article>
+</BaseLayout>
+
+<style is:global>
+  /* Tailwind's preflight strips default element styling, so style the
+     rendered markdown explicitly to match the site's editorial look. */
+  .prose-notes h1 {
+    font-family: theme('fontFamily.serif');
+    font-size: 1.875rem;
+    line-height: 1.2;
+    color: theme('colors.ink');
+    margin-bottom: 0.5rem;
+  }
+  .prose-notes h2 {
+    font-family: theme('fontFamily.serif');
+    font-size: 1.375rem;
+    color: theme('colors.accent');
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-notes blockquote {
+    border-left: 2px solid theme('colors.accent / 40%');
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    font-size: 1.1875rem;
+    line-height: 1.65;
+    color: theme('colors.ink / 90%');
+  }
+  .prose-notes p {
+    margin: 0.75rem 0;
+    color: theme('colors.ink / 80%');
+  }
+  .prose-notes hr {
+    margin: 2.5rem 0;
+    border: 0;
+    border-top: 1px solid theme('colors.rule');
+  }
+  .prose-notes strong {
+    color: theme('colors.ink');
+    font-weight: 600;
+  }
+</style>
