@@ -28,6 +28,11 @@
     <div class="hero__sun" aria-hidden="true"></div>
     <div class="hero__content">
       <p class="hero__eyebrow">★ Bienvenidos a mi rincón ★</p>
+      <div class="portrait" id="portrait">
+        <img src="images/rosanna.jpg" alt="Rosanna Rojas" class="portrait__img"
+             onerror="document.getElementById('portrait').classList.add('portrait--empty');" />
+        <span class="portrait__hint">📷 Foto de Rosanna</span>
+      </div>
       <h1 class="hero__title">Rosanna<br />Rojas</h1>
       <p class="hero__tagline">La tía más cool del barrio &mdash; con todo el sabor de los años setenta.</p>
       <a href="#sobre-mi" class="btn">Conóceme&nbsp;▾</a>
@@ -95,7 +100,8 @@
       <p class="galeria__note">Recuerdos llenos de color y buena onda.</p>
       <div class="polaroids">
         <figure class="polaroid polaroid--a">
-          <div class="polaroid__photo photo--sun"></div>
+          <img src="images/rosanna.jpg" alt="Rosanna disfrutando del sol" class="polaroid__photo polaroid__img"
+               onerror="this.classList.add('photo--sun');this.removeAttribute('src');" />
           <figcaption>Tardes de sol ☀️</figcaption>
         </figure>
         <figure class="polaroid polaroid--b">

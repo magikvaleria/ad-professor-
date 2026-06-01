@@ -1,0 +1,7 @@
+Sube aquí la foto de Rosanna con el nombre exacto:  rosanna.jpg
+
+El sitio busca el archivo  images/rosanna.jpg
+Cuando lo subas, aparecerá automáticamente en el círculo del inicio
+y en la primera polaroid de la galería.
+
+(Puedes borrar este archivo de texto cuando subas la foto.)

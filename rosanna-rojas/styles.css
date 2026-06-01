@@ -87,6 +87,40 @@ body {
   z-index: 2;
   padding: 2rem 1.2rem;
 }
+
+/* ---------- HERO PORTRAIT ---------- */
+.portrait {
+  position: relative;
+  width: min(58vw, 240px);
+  aspect-ratio: 1;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--cream);
+  box-shadow: 0 0 0 6px var(--rust), 6px 8px 0 6px var(--brown);
+  background: var(--cream);
+}
+.portrait__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portrait__hint {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  color: var(--rust);
+  font-size: 0.95rem;
+  padding: 1rem;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, var(--gold) 0 18deg, var(--cream) 18deg 36deg);
+}
+.portrait--empty .portrait__img { display: none; }
+.portrait--empty .portrait__hint { display: flex; }
 .hero__eyebrow {
   font-family: 'Righteous', cursive;
   color: var(--rust);
@@ -228,7 +262,8 @@ body {
 .polaroid--b { transform: rotate(3deg); }
 .polaroid--c { transform: rotate(-2deg); }
 .polaroid:hover { transform: rotate(0deg) scale(1.04); }
-.polaroid__photo { width: 100%; aspect-ratio: 1; border-radius: 2px; }
+.polaroid__photo { width: 100%; aspect-ratio: 1; border-radius: 2px; display: block; }
+.polaroid__img { object-fit: cover; }
 .photo--sun    { background: repeating-conic-gradient(from 0deg at 50% 50%, var(--orange) 0 15deg, var(--gold) 15deg 30deg); }
 .photo--disco  { background: radial-gradient(circle at 30% 30%, var(--teal), var(--rust)); }
 .photo--flores { background: radial-gradient(circle at 50% 60%, var(--gold) 0 18%, var(--avocado) 19%); }
