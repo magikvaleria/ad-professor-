@@ -104,6 +104,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   display: block;
 }
 .portrait__hint {
@@ -263,7 +264,7 @@ body {
 .polaroid--c { transform: rotate(-2deg); }
 .polaroid:hover { transform: rotate(0deg) scale(1.04); }
 .polaroid__photo { width: 100%; aspect-ratio: 1; border-radius: 2px; display: block; }
-.polaroid__img { object-fit: cover; }
+.polaroid__img { object-fit: cover; object-position: center 18%; }
 .photo--sun    { background: repeating-conic-gradient(from 0deg at 50% 50%, var(--orange) 0 15deg, var(--gold) 15deg 30deg); }
 .photo--disco  { background: radial-gradient(circle at 30% 30%, var(--teal), var(--rust)); }
 .photo--flores { background: radial-gradient(circle at 50% 60%, var(--gold) 0 18%, var(--avocado) 19%); }
