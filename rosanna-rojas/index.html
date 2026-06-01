@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosanna Rojas · La tía más cool</title>
+  <meta name="description" content="El sitio web de Rosanna Rojas — la tía más cool, con mucho estilo y todo el sabor de los años setenta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Righteous&family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BB%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#inicio" class="nav__brand">R<span>✿</span>R</a>
+    <nav class="nav__links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#pasiones">Mis pasiones</a>
+      <a href="#galeria">Galería</a>
+      <a href="#saludo">Saludo</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">★ Bienvenidos a mi rincón ★</p>
+      <h1 class="hero__title">Rosanna<br />Rojas</h1>
+      <p class="hero__tagline">La tía más cool del barrio &mdash; con todo el sabor de los años setenta.</p>
+      <a href="#sobre-mi" class="btn">Conóceme&nbsp;▾</a>
+    </div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,100 480,0 720,40 C960,80 1200,10 1440,50 L1440,100 L0,100 Z"></path></svg>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section class="section sobre" id="sobre-mi">
+    <div class="container sobre__grid">
+      <div class="sobre__frame" aria-hidden="true">
+        <div class="record">
+          <span class="record__label">R.R.</span>
+        </div>
+      </div>
+      <div class="sobre__text">
+        <h2 class="heading">Sobre mí</h2>
+        <p>Hola, soy <strong>Rosanna</strong>. Para algunos soy la vecina que siempre tiene música puesta; para mi familia, la <em>tía más cool</em> &mdash; la que cuenta las mejores historias y nunca dice que no a un buen baile.</p>
+        <p>Crecí con el vinilo girando, los colores cálidos y la idea de que la vida se disfruta despacio y con estilo. Este pequeño rincón de internet es mi manera de compartir un poco de ese espíritu setentero con todos ustedes.</p>
+        <ul class="badges">
+          <li>Buena vibra</li>
+          <li>Amante del vinilo</li>
+          <li>Tía favorita</li>
+          <li>Espíritu libre</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PASIONES ===== -->
+  <section class="section pasiones" id="pasiones">
+    <div class="container">
+      <h2 class="heading heading--center">Mis pasiones</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon">🎶</div>
+          <h3>Música &amp; vinilo</h3>
+          <p>Del soul al disco, no hay tarde que no mejore con un buen disco girando en el tocadiscos.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🌻</div>
+          <h3>Jardinería</h3>
+          <p>Mis girasoles son casi tan altos como yo. Nada como ensuciarse las manos bajo el sol.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🍲</div>
+          <h3>Cocina con sabor</h3>
+          <p>La receta secreta de la familia se queda en la familia &mdash; pero siempre hay un plato para ti.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">💃</div>
+          <h3>Baile</h3>
+          <p>Si suena la música, estos pies no se quedan quietos. La pista de baile es mi lugar feliz.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section class="section galeria" id="galeria">
+    <div class="container">
+      <h2 class="heading heading--center">Galería</h2>
+      <p class="galeria__note">Recuerdos llenos de color y buena onda.</p>
+      <div class="polaroids">
+        <figure class="polaroid polaroid--a">
+          <div class="polaroid__photo photo--sun"></div>
+          <figcaption>Tardes de sol ☀️</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--b">
+          <div class="polaroid__photo photo--disco"></div>
+          <figcaption>Noche de disco 🕺</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--c">
+          <div class="polaroid__photo photo--flores"></div>
+          <figcaption>Mi jardín 🌼</figcaption>
+        </figure>
+      </div>
+      <p class="galeria__tip">¿Tienes fotos para añadir, tía? Reemplaza estos marcos con imágenes reales cuando quieras.</p>
+    </div>
+  </section>
+
+  <!-- ===== SALUDO / QUOTE ===== -->
+  <section class="section saludo" id="saludo">
+    <div class="container saludo__inner">
+      <blockquote class="saludo__quote">
+        &ldquo;La vida es como un buen disco:<br />hay que ponerle ritmo y disfrutarla entera.&rdquo;
+      </blockquote>
+      <p class="saludo__sign">&mdash; Rosanna ✌️</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer__big">Con mucho cariño 🧡</p>
+    <p class="footer__small">Hecho con amor para la tía más cool · Rosanna Rojas · <span id="year"></span></p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
