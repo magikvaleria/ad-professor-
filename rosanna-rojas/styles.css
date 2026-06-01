@@ -1,0 +1,264 @@
+/* =========================================================
+   Rosanna Rojas — 1970s style
+   Palette: harvest gold, burnt orange, avocado, brown, cream
+   ========================================================= */
+
+:root {
+  --gold:    #e8a317;
+  --orange:  #cc5500;
+  --rust:    #a4341f;
+  --avocado: #6b8e23;
+  --brown:   #5a3825;
+  --cream:   #f6e7c1;
+  --paper:   #fbf2dc;
+  --teal:    #2f8f83;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--brown);
+  background: var(--paper);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.5rem;
+  background: var(--rust);
+  border-bottom: 4px solid var(--gold);
+  box-shadow: 0 4px 0 rgba(90, 56, 37, 0.25);
+}
+.nav__brand {
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.6rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.nav__brand span { color: var(--cream); font-size: 1.1rem; }
+.nav__links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.nav__links a {
+  font-family: 'Righteous', cursive;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, transform 0.2s;
+}
+.nav__links a:hover { color: var(--gold); transform: translateY(-2px); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 38%,
+      var(--orange) 0deg 12deg,
+      var(--gold)   12deg 24deg);
+  overflow: hidden;
+}
+.hero__sun {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: min(78vw, 620px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--cream) 0%, var(--cream) 55%, var(--gold) 56%, var(--gold) 62%, transparent 63%);
+  border-radius: 50%;
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.2rem;
+}
+.hero__eyebrow {
+  font-family: 'Righteous', cursive;
+  color: var(--rust);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.hero__title {
+  font-family: 'Shrikhand', cursive;
+  font-size: clamp(3.4rem, 13vw, 8rem);
+  line-height: 0.92;
+  color: var(--rust);
+  text-shadow:
+    3px 3px 0 var(--cream),
+    6px 6px 0 var(--avocado);
+  margin-bottom: 0.6rem;
+}
+.hero__tagline {
+  max-width: 30ch;
+  margin: 0 auto 1.6rem;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 600;
+  color: var(--brown);
+}
+.btn {
+  display: inline-block;
+  font-family: 'Righteous', cursive;
+  background: var(--teal);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: 3px solid var(--brown);
+  box-shadow: 4px 4px 0 var(--brown);
+  letter-spacing: 1px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--brown); }
+.hero__wave { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+.hero__wave svg { width: 100%; height: 80px; display: block; }
+.hero__wave path { fill: var(--paper); }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 4.5rem 1.5rem; }
+.container { max-width: 1040px; margin: 0 auto; }
+.heading {
+  font-family: 'Shrikhand', cursive;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--orange);
+  margin-bottom: 1.4rem;
+}
+.heading--center { text-align: center; }
+
+/* ---------- SOBRE MÍ ---------- */
+.sobre { background: var(--paper); }
+.sobre__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.sobre__frame { display: flex; justify-content: center; }
+.record {
+  width: min(70vw, 280px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--gold) 0 16%, #111 17%),
+    repeating-radial-gradient(circle, #1a1a1a 0 4px, #2b2b2b 4px 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 6px 6px 0 var(--avocado);
+  animation: spin 14s linear infinite;
+}
+.record__label {
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.5rem;
+  color: var(--rust);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .record { animation: none; } }
+
+.sobre__text p { margin-bottom: 1rem; font-size: 1.05rem; }
+.badges { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+.badges li {
+  font-family: 'Righteous', cursive;
+  background: var(--avocado);
+  color: var(--cream);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- PASIONES ---------- */
+.pasiones { background: var(--avocado); color: var(--cream); }
+.pasiones .heading { color: var(--cream); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.card {
+  background: var(--paper);
+  color: var(--brown);
+  border-radius: 18px;
+  padding: 1.8rem 1.4rem;
+  border: 3px solid var(--brown);
+  box-shadow: 6px 6px 0 var(--rust);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-6px) rotate(-1deg); }
+.card__icon { font-size: 2.6rem; margin-bottom: 0.6rem; }
+.card h3 { font-family: 'Righteous', cursive; color: var(--orange); margin-bottom: 0.5rem; font-size: 1.25rem; }
+.card p { font-size: 0.98rem; }
+
+/* ---------- GALERÍA ---------- */
+.galeria { background: var(--gold); }
+.galeria .heading { color: var(--rust); }
+.galeria__note { text-align: center; font-weight: 600; margin-bottom: 2rem; color: var(--brown); }
+.polaroids {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.8rem;
+}
+.polaroid {
+  background: #fff;
+  padding: 0.8rem 0.8rem 1.6rem;
+  border-radius: 4px;
+  box-shadow: 4px 6px 14px rgba(90, 56, 37, 0.35);
+  width: 230px;
+  transition: transform 0.2s;
+}
+.polaroid--a { transform: rotate(-5deg); }
+.polaroid--b { transform: rotate(3deg); }
+.polaroid--c { transform: rotate(-2deg); }
+.polaroid:hover { transform: rotate(0deg) scale(1.04); }
+.polaroid__photo { width: 100%; aspect-ratio: 1; border-radius: 2px; }
+.photo--sun    { background: repeating-conic-gradient(from 0deg at 50% 50%, var(--orange) 0 15deg, var(--gold) 15deg 30deg); }
+.photo--disco  { background: radial-gradient(circle at 30% 30%, var(--teal), var(--rust)); }
+.photo--flores { background: radial-gradient(circle at 50% 60%, var(--gold) 0 18%, var(--avocado) 19%); }
+.polaroid figcaption { font-family: 'Righteous', cursive; text-align: center; margin-top: 0.7rem; color: var(--brown); }
+.galeria__tip { text-align: center; margin-top: 2.2rem; font-style: italic; color: var(--brown); font-size: 0.9rem; }
+
+/* ---------- SALUDO ---------- */
+.saludo { background: var(--rust); }
+.saludo__inner { text-align: center; max-width: 720px; }
+.saludo__quote {
+  font-family: 'Shrikhand', cursive;
+  font-size: clamp(1.4rem, 4.5vw, 2.4rem);
+  color: var(--gold);
+  line-height: 1.3;
+}
+.saludo__sign { font-family: 'Righteous', cursive; color: var(--cream); margin-top: 1.2rem; font-size: 1.2rem; }
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+.footer__big { font-family: 'Shrikhand', cursive; font-size: 1.8rem; color: var(--gold); margin-bottom: 0.4rem; }
+.footer__small { font-size: 0.85rem; opacity: 0.9; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 760px) {
+  .sobre__grid { grid-template-columns: 1fr; text-align: center; }
+  .badges { justify-content: center; }
+  .nav { flex-direction: column; gap: 0.5rem; }
+}
